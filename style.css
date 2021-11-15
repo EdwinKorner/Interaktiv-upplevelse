@@ -1,0 +1,45 @@
+/* Reusable code snippets */
+
+.flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+
+body{
+    font-family: monospace;
+    background-color: rgb(51, 51, 51);
+    color: whitesmoke;
+}
+
+h2{
+    text-align: center;
+}
+
+#välj-kamera{
+    display: none;
+}
+
+#starta-spelet{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem 5rem;
+}
+
+#knappar{
+    justify-content: space-between;
+    width:40rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+#knappar > button{
+    padding: 1rem 3rem;
+}
