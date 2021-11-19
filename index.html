@@ -10,14 +10,19 @@
 </head>
 <body>
     <main>
+        <!--Bakgrundsljudet som alltid är med-->
     <audio controls autoplay loop id="ljudspelare" src="/Ljud-och-videos/Bakgrundsljud.mp3"></audio>
+
+        <!--Startsidan-->
+
     <h2 id="main-h2">Hej <span id="namn"></span>! Du har fått i uppdrag att hålla koll på kamerorna i en lokal under natten. Följ din magkänsla så borde allt gå bra, gl hf :)</h2>
 
     <button id="starta-spelet" onclick="startaspelet()">Starta spelet</button>
     <div id="välj-kamera">
     <h2>Välj kamera</h2>
     <div id="knappar" class="flex">
-    <button  id="cam1">Cam 1</button>
+    <button  id="cam1Decoy">Cam 1</button>
+    <button onclick="detektor(); this.onclick=null;" id="cam1">Cam 1</button>
     <button  id="cam3">Cam 3</button>
     <button onclick="malfunction1(); this.onclick=null;" id="cam7">Cam 7</button>
     </div>
@@ -27,23 +32,29 @@
         <img src="Bilder/Static.gif" id="static" alt="">
     </div>
 
-    <!--Cam 1-->
+    <!--Kamera 1-->
     <div id="security-cam1">
     <img src="Bilder/Static.gif" id="static" alt="">
     <img src="Bilder/Backrooms1.jpg" id="backrooms1" alt="">
     </div>
+    <div id="rörelsedetektor">
+        <h2 style="text-align: center;">Rörelsedetektor gick igång på kamera 1</h2>
+        <button id="gåUt">Gå ut och kolla om någon är där</button>
+        <button id="kollaKamera">Vänta och se om man kan se något på kameran</button>
+        </div>
+        <video  muted="muted" id="gåUtVideo" autoplay="autoplay" type="video/mp4">
+            <source src="/Ljud-och-videos/gå-ut.mp4" type="video/mp4">
+        </video>
 
-    <!--Cam3-->
+    <!--Kamera 3-->
     <div id="security-cam3">
         <img src="Bilder/Static.gif" id="static" alt="">
         <img src="Bilder/Backrooms2.jpg" id="backrooms2" alt="">
     </div>
-        <div id="rörelsedetektor">
-        <h2 style="text-align: center;">Rörelsedetektor gick igång på kamera 3</h2>
-        </div>
+        
 
 
-    <!--Cam7-->
+    <!--Kamera 7-->
     <div id="security-cam7">
         <img src="Bilder/Static.gif" id="static" alt="">
         <img src="Bilder/Backrooms3.jpg" id="backrooms3" alt="">
@@ -61,10 +72,18 @@
     </div>
 </main>
 
+    <!--Det som syns när man har förlorat-->
+
     <div id="youDied">
         <h1 style="text-align: center; color: red;">Du dog :(</h1> <br>
         <h2>Om du spelar igen så kanske du överlever natten :)</h2> <br>
         <button id="spelaIgen">Spela igen</button>
+    </div>
+
+    <div id="youWon">
+        <h1 style="text-align: center; color: rgb(229, 255, 0);">Du vann :)</h1> <br>
+        <h2>Spela igen om du vill :)</h2> <br>
+        <button onclick="spelaIgen()" id="spelaIgen">Spela igen</button>
     </div>
 
 </body>

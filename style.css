@@ -1,21 +1,10 @@
-.body{
-    display: flex;
-}
-
 /* Reusable code snippets */
 
 .flex{
     display: flex;
 }
 
-.justify-center{
-    justify-content: center;
-}
-
-.align-center{
-    align-items: center;
-}
-
+/*Här är lite positionering och ändring på utseendet*/
 
 body{
     font-family: monospace;
@@ -46,9 +35,13 @@ h2{
     z-index: 100;
 }
 
-#knappar >button , #fixaKamera > button{
+/*Här är css för de flesta knapparna på hemsidan så att de ska ha samma padding*/
+
+#knappar >button , #fixaKamera > button, #rörelsedetektor > button{
     padding: 1rem 3rem;
 }
+
+/*Jag har lagt in ett statiskt "brus" på varje kamera för att ge lite extra effekt*/
 
 #static{
     z-index: 1000;
@@ -58,6 +51,8 @@ h2{
     position: absolute;
 }
 
+/*Jag har använt samma css kod på de olika kamerorna för att få samma position och storlek*/
+
 #security-cam1, #security-cam3, #security-cam7{
     position: absolute;
     left:50%;
@@ -65,6 +60,12 @@ h2{
     height: 45rem;
     width: 65rem;
     background-color: red;
+    display: none;
+}
+
+
+
+#cam1{
     display: none;
 }
 
@@ -80,12 +81,7 @@ h2{
     position: absolute;
 }
 
-.video{
-    background-color: red;
-    z-index: 0;
-    overflow: hidden;
-    object-fit: scale-down;
-}
+/*Här är css för de två videos som visas på hemsidan */
 
 #malfunction{
     z-index: 120;
@@ -93,7 +89,19 @@ h2{
     position: absolute;
 }
 
-#fixaKamera{
+#gåUtVideo{
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 65rem;
+    height: 45rem;
+}
+
+/*Samma css för de olika valen man har*/
+
+#fixaKamera, #rörelsedetektor{
     display: none;
     justify-content: space-between;
     align-items: center;
@@ -113,6 +121,14 @@ h2{
     font-size: larger;
     margin-top: 55%;
 }
+
+#rörelsedetektor > button{
+    width: 23rem;
+    font-size: larger;
+    margin-top: 55%;
+}
+
+/*#Ögon är det man ser i bakgrunden på kamera 7. #svartrektangel kommer när kameran blir svart*/
 
 #ögon{
     z-index: 110;
@@ -135,11 +151,12 @@ h2{
     display: none;
 }
 
+/*Css för skärmen när man har förlorat*/
+
 #youDied{
     display: none;
     height: 50rem;
     width:50rem;
-    /* background-color: red; */
     margin-left: 50%;
     transform: translateX(-50%);
 }
@@ -150,6 +167,27 @@ h2{
 }
 
 #youDied > button{
+    padding: 1rem 3rem;
+    height: 5rem;
+    width: 10rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+#youWon{
+    display: none;
+    height: 50rem;
+    width:50rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+#youWon > h1{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+#youWon > button{
     padding: 1rem 3rem;
     height: 5rem;
     width: 10rem;
