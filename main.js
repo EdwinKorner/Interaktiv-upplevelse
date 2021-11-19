@@ -51,6 +51,22 @@ function kamera3(){
 
 document.getElementById("cam7").addEventListener("click", kamera7);
 
+let malfunction = document.getElementById("malfunction");
+
+function play(){
+    var audio = new Audio('Malfunction.mp3');
+    audio.loop = true;
+    audio.play();
+}
+
+function stop(){
+    var audio = new Audio('Malfunction.mp3');
+    audio.pause();
+}
+
+
+var malfunctionCam7;
+
 function kamera7(){
 
     securityCam1.style.display="none";
@@ -60,9 +76,14 @@ function kamera7(){
     cam1.style.display="block";
     cam3.style.display="block";
     cam7.style.display="none";
-    setTimeout(function(){document.getElementById("malfunction").style.display="block";}, 15000);
-    setTimeout(function(){document.getElementById("fixaKamera").style.display="block";}, 20000);
+    setTimeout(function(){malfunction.style.display="block"; play();}, 1000);
+    setTimeout(function(){document.getElementById("fixaKamera").style.display="block";}, 1000);
 }
 
+document.getElementById("startaOm").addEventListener("click", startaom);
+document.getElementById("startaOm").addEventListener("click", stop);
 
 
+function startaom(){
+    malfunction.style.display="none";
+}

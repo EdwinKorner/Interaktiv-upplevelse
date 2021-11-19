@@ -88,13 +88,13 @@ h2{
 }
 
 #malfunction{
-    z-index: 110;
+    z-index: 120;
     display: none;
     position: absolute;
 }
 
 #fixaKamera{
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     width:50rem;
@@ -104,8 +104,22 @@ h2{
     transform: translateX(-50%);
     position: absolute;
     z-index: 100;
+    font-size: larger;
 }
+
 
 #fixaKamera > button{
     width: 15rem;
+    font-size: larger;
+    margin-top: 55%;
+}
+
+#ögon{
+    z-index: 110;
+    position: absolute;
+    height: 5rem;
+    width:5rem;
+    top:50%;
+    left:70%;
+    display: none;
 }
