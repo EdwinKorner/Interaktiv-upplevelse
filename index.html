@@ -9,6 +9,8 @@
     <script defer src="main.js"></script>
 </head>
 <body>
+    <main>
+    <audio controls autoplay loop id="ljudspelare" src="/Ljud-och-videos/Bakgrundsljud.mp3"></audio>
     <h2 id="main-h2">Hej <span id="namn"></span>! Du har fått i uppdrag att hålla koll på kamerorna i en lokal under natten. Följ din magkänsla så borde allt gå bra, gl hf :)</h2>
 
     <button id="starta-spelet" onclick="startaspelet()">Starta spelet</button>
@@ -17,11 +19,13 @@
     <div id="knappar" class="flex">
     <button  id="cam1">Cam 1</button>
     <button  id="cam3">Cam 3</button>
-    <button  id="cam7">Cam 7</button>
+    <button onclick="malfunction1(); this.onclick=null;" id="cam7">Cam 7</button>
     </div>
     </div>
 
-    <audio controls autoplay loop id="ljudspelare" src="Bakgrundsljud.mp3"></audio>
+    <div id="svartrektangel">
+        <img src="Bilder/Static.gif" id="static" alt="">
+    </div>
 
     <!--Cam 1-->
     <div id="security-cam1">
@@ -34,23 +38,33 @@
         <img src="Bilder/Static.gif" id="static" alt="">
         <img src="Bilder/Backrooms2.jpg" id="backrooms2" alt="">
     </div>
+        <div id="rörelsedetektor">
+        <h2 style="text-align: center;">Rörelsedetektor gick igång på kamera 3</h2>
+        </div>
+
 
     <!--Cam7-->
     <div id="security-cam7">
         <img src="Bilder/Static.gif" id="static" alt="">
         <img src="Bilder/Backrooms3.jpg" id="backrooms3" alt="">
         <video muted="muted" id="malfunction" loop="loop" autoplay="autoplay" type="video/mp4">
-            <source src="Malfunction.mp4" type="video/mp4">
+            <source src="/Ljud-och-videos/Malfunction.mp4" type="video/mp4">
         </video>
             <img id="ögon" src="Bilder/Eyes.gif" id="ögon" alt="">
-    </div>
-    
+    </div>    
 
     <div id="fixaKamera">
-        <h2>Det verkar som att alla kameror blir störda av en okänd källa. Välj ett sätt för att försöka fixa kamerorna:</h2>
+        <h2>Det verkar som att kamera 7 blir störd av en okänd källa. Välj ett sätt för att försöka fixa kameran:</h2>
         <button id="startaOm">S̴̟̯̥͎͂̿͠t̷̬̟̅ạ̶͔̭͚͕̎͗͆͠r̷̘͖̜͐̒̈̕ẗ̸̡̲̗̙́̈́̀̈̀̚͜ā̵̡̻͉̯͘ ̴̻̱̻̖̩͂̈́͘͝ͅo̸̲̣͑͂m̸̖̘͇̈́̒̂̅͋͝ ̶͚̊̍͒̃̚s̴̺̀ÿ̴̨̮̼̳̣̄̄͛͜͝͝ś̶̭̝͕̪̤̓͂t̷̖͍͖͎͈̑͂̈́̾̇ͅe̶̩͓̭̾͛̓͐̑m̶̮̪̺̞͠͝ẻ̷̡̥̩̮̘̖t̷̟̫͂̋ͅ</button>
         <button id="vänta">Vänta och se om problemet löser sig av sig själv</button>
         <button id="ringChefen">Ṛ̸̞̇i̸͈͠n̷͖̈́g̸̝̙̔̆ ̶̟̜̆͋č̷̢̢̀h̵̺̃͜ė̷̼̆f̵̨̱̀ë̶̻̕n̴̤͓̔́ ̴̖͂͐o̶̰̼̊͐c̸̱̗̀ḥ̷̇̃ ̵̻͆f̵͖͠r̷̜̘̿͐å̶̭̈͗g̸̨̟̉͘a̶͓͛̊ ̶̢͓͆̕v̶̼̺̄ā̷͈̠d̵͎̔ ̴͔̳͛d̴̺̃ù̴̻͍ ̸͕̮͑s̴̡̜̈́̅k̷̨̞͂͝ȃ̶͖̈ ̴̬̈̑g̶͙̎ö̶̱͆ṛ̶͌à̵̺̀</button>
+    </div>
+</main>
+
+    <div id="youDied">
+        <h1 style="text-align: center; color: red;">Du dog :(</h1> <br>
+        <h2>Om du spelar igen så kanske du överlever natten :)</h2> <br>
+        <button id="spelaIgen">Spela igen</button>
     </div>
 
 </body>
